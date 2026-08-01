@@ -1,4 +1,4 @@
-# NISAR DInSAR LA/LB处理流程
+# 基于GMTSAR的NISAR DInSAR LA/LB处理流程
 
 本仓库整理了一套基于GMTSAR的两景NISAR DInSAR研究流程，包括LA/LB双频通道准备、干涉处理、陆地掩膜、SNAPHU解缠、分裂频谱电离层估计，以及校正后LA相位的再次解缠和LOS产品生成。
 

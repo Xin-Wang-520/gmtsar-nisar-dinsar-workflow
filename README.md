@@ -1,4 +1,4 @@
-# NISAR DInSAR LA/LB workflow
+# GMTSAR-based NISAR DInSAR LA/LB workflow
 
 Research scripts for a two-acquisition NISAR DInSAR workflow based on
 [GMTSAR](https://github.com/gmtsar/gmtsar). The workflow prepares the LA and LB
