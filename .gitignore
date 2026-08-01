@@ -1,0 +1,53 @@
+# macOS and editor metadata
+.DS_Store
+._*
+*.swp
+*~
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# NISAR source data and SAR products
+*.h5
+*.hdf5
+*.SLC
+*.PRM
+*.LED
+*.raw
+*.tiff
+*.tif
+
+# GMT/GMTSAR/SNAPHU products
+*.grd
+*.nc
+*.in
+*.out
+*.ps
+*.pdf
+*.png
+*.jpg
+*.jpeg
+*.kml
+*.kmz
+*.cpt
+*.log
+*.pid
+gmt.conf
+gmt.history
+snaphu.conf.brief
+
+# Generated project directories
+LA/
+LB/
+raw/
+topo/
+iono_correction*/
+LA_iono_corrected*/
+presnaphu_pdf/
+diagnostic/
+tmp/
+
+# Curated documentation figures are tracked intentionally.
+!docs/images/[!.]*.png
