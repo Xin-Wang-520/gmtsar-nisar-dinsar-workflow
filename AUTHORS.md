@@ -8,5 +8,6 @@ The workflow uses external software including GMTSAR, GMT, SNAPHU, NumPy,
 SciPy, and netCDF4. Their authors and licenses remain independent from this
 repository.
 
-This repository intentionally has no `LICENSE` file until ownership and
-redistribution permission for every derived component are confirmed.
+This repository is distributed under the GNU General Public License v3.0.
+See `LICENSE`. Third-party software and data retain their respective licenses
+and distribution terms.

@@ -73,4 +73,8 @@ Planetary Science Letters*, **686**, 120070.
 
 仓库不包含NISAR HDF5、DEM、SLC、GRD、干涉图、日志、PDF、PNG、KML或其他计算结果。数据使用应遵守相应的数据分发条款。
 
-电离层估计采用Gomba等（2016）的分裂频谱方法；后续脚本由Yajun Zhang发展；NISAR LA/LB流程最终由Xin Wang（中国科学技术大学，合肥）更新完成。在确认所有衍生代码的所有权和再分发许可前，本仓库暂不声明开放源代码许可证。
+电离层估计采用Gomba等（2016）的分裂频谱方法；后续脚本由Yajun Zhang发展；NISAR LA/LB流程最终由Xin Wang（中国科学技术大学，合肥）更新完成。
+
+## 许可证
+
+本仓库采用GNU General Public License v3.0，详见[LICENSE](LICENSE)。第三方软件和数据仍适用其各自的许可证与分发条款。

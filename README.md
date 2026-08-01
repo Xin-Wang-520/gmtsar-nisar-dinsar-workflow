@@ -206,5 +206,8 @@ source repository. Follow the applicable NISAR and DEM data-distribution terms.
 - Processing relies on GMTSAR, GMT, and SNAPHU; cite those projects and the
   relevant NISAR products in scientific use.
 
-No open-source license is asserted here until ownership and redistribution
-permission for all derived components have been confirmed.
+## License
+
+This repository is distributed under the GNU General Public License v3.0.
+See [LICENSE](LICENSE). Third-party software and data retain their respective
+licenses and distribution terms.
