@@ -381,12 +381,50 @@ make_robust_cpt()
         -Z > "$output_cpt"
 }
 
+make_symmetric_absmax_cpt()
+{
+    local grid="$1"
+    local palette="$2"
+    local output_cpt="$3"
+    local grid_min
+    local grid_max
+    local limit
+    local lower
+    local step
+
+    read -r grid_min grid_max < <(
+        gmt grdinfo "$grid" -C |
+            awk '{print $6, $7}'
+    )
+
+    limit="$(
+        awk -v lo="$grid_min" -v hi="$grid_max" '
+            BEGIN {
+                if (lo < 0) lo = -lo
+                if (hi < 0) hi = -hi
+                value = (lo > hi ? lo : hi)
+                if (!(value > 0)) value = 1
+                printf "%.12g", value
+            }
+        '
+    )"
+    lower="$(awk -v x="$limit" 'BEGIN {printf "%.12g", -x}')"
+    step="$(awk -v x="$limit" 'BEGIN {printf "%.12g", 2*x/100}')"
+
+    gmt makecpt \
+        -C"$palette" \
+        -T"$lower/$limit/$step" \
+        -Z > "$output_cpt"
+}
+
 make_robust_cpt \
     unwrap.grd \
     vik \
     unwrap.cpt
 
-make_robust_cpt \
+# Center the LOS palette on zero and use the full absolute grid maximum at
+# both ends: [-max(abs(LOS)), +max(abs(LOS))].
+make_symmetric_absmax_cpt \
     los.grd \
     polar \
     los.cpt
