@@ -61,6 +61,14 @@ IONO_OUTPUT_DIR="$PWD/iono_correction_10km" \
 
 ![T54D电离层校正缠绕相位](docs/images/t54d-ionospheric-correction-wrapped-phase.png)
 
+## 维护者相关论文
+
+Wang, X., Li, D., Zhu, J., Xu, X., Li, Z., Sandwell, D. T., Hao, D., Liu, C.,
+and Fang, R. (2026). Near instantaneously triggered Mw 5.9 aftershock during
+the 2025 Mw 7.1 Dingri earthquake revealed by radar interferometry. *Earth and
+Planetary Science Letters*, **686**, 120070.
+[https://doi.org/10.1016/j.epsl.2026.120070](https://doi.org/10.1016/j.epsl.2026.120070)
+
 ## 数据与授权
 
 仓库不包含NISAR HDF5、DEM、SLC、GRD、干涉图、日志、PDF、PNG、KML或其他计算结果。数据使用应遵守相应的数据分发条款。

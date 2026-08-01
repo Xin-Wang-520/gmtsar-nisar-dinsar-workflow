@@ -183,6 +183,14 @@ phase for two example tracks:
 
 ![T54D wrapped-phase ionospheric correction](docs/images/t54d-ionospheric-correction-wrapped-phase.png)
 
+## Related publication by the maintainer
+
+Wang, X., Li, D., Zhu, J., Xu, X., Li, Z., Sandwell, D. T., Hao, D., Liu, C.,
+and Fang, R. (2026). Near instantaneously triggered Mw 5.9 aftershock during
+the 2025 Mw 7.1 Dingri earthquake revealed by radar interferometry. *Earth and
+Planetary Science Letters*, **686**, 120070.
+[https://doi.org/10.1016/j.epsl.2026.120070](https://doi.org/10.1016/j.epsl.2026.120070)
+
 ## Data policy
 
 NISAR RSLC/HDF5 files, DEMs, GMT grids, SLCs, interferograms, logs, PDFs,
