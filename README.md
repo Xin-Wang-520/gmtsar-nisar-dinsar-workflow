@@ -24,6 +24,7 @@ phase, and re-unwraps the corrected LA interferogram.
 | 6 | `run6_unwrap_interp_geocode_LA_LB.sh` | Fill phase gaps, unwrap LA/LB with SNAPHU, and geocode the results. |
 | 7 | `run7_nsr_iono_LA_LB.sh` | Estimate and filter the LA/LB split-spectrum ionospheric correction. |
 | 8 | `run8_iono_corrected_LA.sh` | Re-unwrap the corrected LA phase and produce LOS/geographic products. |
+| 9 (optional) | `run9_mask_isolated_areas_LA.sh` | Remove manually selected isolated areas and regenerate radar/geographic/KML products. |
 
 ```text
 NISAR RSLC pair + orbit/footprint information
@@ -51,6 +52,9 @@ NISAR RSLC pair + orbit/footprint information
                     |
                     v
         run8: corrected LA re-unwrapping + LOS
+                    |
+                    v
+        run9 (optional): manual isolated-area masking
 ```
 
 ## Requirements
@@ -81,7 +85,8 @@ project/
 ├── run1_get_nisar_make_dem_kml.py
 ├── run2_prepare_NISAR_LA_LB.sh
 ├── ...
-└── run8_iono_corrected_LA.sh
+├── run8_iono_corrected_LA.sh
+└── run9_mask_isolated_areas_LA.sh
 ```
 
 The scripts create and populate `LA/`, `LB/`, `iono_correction/`, and
@@ -102,7 +107,14 @@ python3 run1_get_nisar_make_dem_kml.py
 ./run6_unwrap_interp_geocode_LA_LB.sh 0.1 0
 ./run7_nsr_iono_LA_LB.sh
 ./run8_iono_corrected_LA.sh 0.1 0
+# Optional, after creating LA_iono_corrected/mask_island.txt:
+./run9_mask_isolated_areas_LA.sh
 ```
+
+The polygons in `LA_iono_corrected/mask_island.txt` are exclusion polygons in
+radar-grid range/azimuth coordinates. Polygon interiors are set to NaN. Run 9
+does not overwrite the original run 8 grids; its products use the `_mask`
+suffix.
 
 Do not continue to step 7 if step 6 contains rectangular phase jumps,
 unresolved connected-component offsets, or other unwrapping errors. The Gomba

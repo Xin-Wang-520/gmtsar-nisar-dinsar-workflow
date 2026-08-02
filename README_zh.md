@@ -4,7 +4,7 @@
 
 > 这是一套研究脚本，不是NASA/JPL或GMTSAR官方处理器。每个区域都必须独立检查相干性、解缠连通区、相位参考以及电离层校正结果。
 
-## run1–run8
+## run1–run9
 
 1. `run1_get_nisar_make_dem_kml.py`：读取NISAR覆盖范围KML并准备DEM。
 2. `run2_prepare_NISAR_LA_LB.sh`：建立LA/LB目录及GMTSAR配置。
@@ -14,6 +14,7 @@
 6. `run6_unwrap_interp_geocode_LA_LB.sh`：相位插值、SNAPHU解缠和地理编码。
 7. `run7_nsr_iono_LA_LB.sh`：利用LA/LB分裂频谱估计并滤波电离层相位。
 8. `run8_iono_corrected_LA.sh`：对校正后的LA相位重新解缠，生成LOS和地理坐标产品。
+9. `run9_mask_isolated_areas_LA.sh`（可选）：手动去除孤立区域，并重新生成雷达坐标、地理坐标及KML产品。
 
 ## 基本运行方式
 
@@ -26,7 +27,11 @@ python3 run1_get_nisar_make_dem_kml.py
 ./run6_unwrap_interp_geocode_LA_LB.sh 0.1 0
 ./run7_nsr_iono_LA_LB.sh
 ./run8_iono_corrected_LA.sh 0.1 0
+# 可选：先创建LA_iono_corrected/mask_island.txt
+./run9_mask_isolated_areas_LA.sh
 ```
+
+`LA_iono_corrected/mask_island.txt`采用雷达网格的距离向/方位向坐标，文件中的多边形表示需要删除的区域，多边形内部将设为NaN。run9不会覆盖run8的原始网格，新结果使用`_mask`后缀。
 
 必须逐步检查，不能发现run6解缠台阶后仍直接进入run7。LA/LB之间的整数周或相位参考误差会被Gomba系数明显放大。
 
